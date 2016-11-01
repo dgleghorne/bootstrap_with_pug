@@ -1,0 +1,151 @@
+include mixins
+doctype
+html( lang="en" )
+    head
+        title Baking Bootstrap Snippets with Jade
+        meta( charset='utf-8' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+        meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+        //+bootswatch('flatly')
+
+    body(style="padding-bottom:10rem;")
+      .container
+        +nav("David Corp", "dropdown_menu")
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
+          +nav_item_dropdown('#')(label="Dropdown")
+            +nav_item('#') Action
+            +nav_item( "#" ) Another action
+            +nav_item( "#", "disabled" ) Something else here
+            +nav_divider
+            +nav_header Nav header
+            +nav_item( "#" ) Separated link
+            +nav_item( "#" ) One more separated link
+        .jumbotron
+          h1 Hello, world!
+          p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+          p: +button("primary", "more.htm", "large") Learn more
+        .row
+          .col-md-4.col-sm-6.col-xs-12
+            +panel("Panel Heading", "success") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+          .col-md-4.col-sm-6.col-xs-12
+            +panel("Panel Heading") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+          .col-md-4.col-sm-6.col-xs-12
+            +panel("Panel Heading", "primary") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+        +button Default
+        +button("primary", "link.htm") Primary
+        +button("success", "success.html", "large") Success
+        +button("info", "info.html", "small") Info
+        +button("warning", "warning.html", "mini") Warning
+
+        +alert("warning") Warning! Warning!
+        +alert("danger") Danger Will Robinson!
+        +alert("success") You succeeded :-)
+        +alert("info") Some information for you
+
+        .btn-group(role='group')
+          +button("default") Left
+          +button("default") Middle
+          +button("default") Right
+
+        .btn-toolbar(role='toolbar')
+          .btn-group.btn-group-lg(role='group')
+            +button("default") 1
+            +button("default") 2
+            +button("default") 3
+          .btn-group.btn-group-sm(role='group')
+            +button("default") 4
+            +button("default") 5
+            +button("default") 6
+          .btn-group.btn-group-xs(role='group')
+            +button("default") 7
+            +button("default") 8
+            +button("default") 9
+        br
+        br
+
+        .btn-group(role='group')
+          +button("default") 1
+          +button("default") 2
+          +dropdown_button('Dropdown')
+            +dropdown_item( "#" ) Dropdown link
+            +dropdown_item( "#" ) Dropdown link
+        br
+        br
+
+        .btn-group-vertical(role='group')
+          +button("default") 1
+          +button("default") 2
+          +dropdown_button('Dropdown')
+            +dropdown_item Dropdown no link
+            +dropdown_item( "#" ) Dropdown link
+        br
+        br
+
+        +dropdown_button('Default', 'default')
+        +dropdown_button('Primary', 'primary')
+        +dropdown_button('Success', 'success')
+        +dropdown_button('Info', 'info')
+        +dropdown_button('Warning', 'warning')
+        +dropdown_button('Danger', 'danger')
+
+        br
+        br
+
+        +dropdown_split_button('Default', 'default')
+          +dropdown_item( "#" ) Dropdown link
+          +dropdown_item( "#" ) Dropdown link
+        br
+        br
+
+        .row
+          .col-md-4.col-sm-6.col-xs-12
+            +listGroup("list")
+              +listItem("active") Cras justo odio
+              +listItem Dapibus ac facilisis in
+              +listItem Morbi leo risus
+              +listItem Dapibus ac facilisis in
+              +listItem Morbi leo risus
+              +listItem Dapibus ac facilisis in
+          .col-md-4.col-sm-6.col-xs-12
+            +listGroup("links")
+              +listItem("link1.html", "active")
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+              +listItem("link2.html")
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+              +listItem("link3.html")
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus.
+          .col-md-4.col-sm-6.col-xs-12
+            +listGroup
+              +listItem
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+              +listItem
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+              +listItem
+                  +listHeading List group item heading
+                  +listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+        +input_grp_left_label('@', 'text', 'username')
+        br
+        +input_grp_right_label('@', 'text', 'username')
+        br
+        +input_grp_7-10_label('$', '.00', 'text')
+        br
+        +input_vanity_URL('Your vanity URL', 'https://example.com/users/')
+        br
+        +input_grp_checkbox('text')
+        br
+        +input_grp_radio('text')
+
+
+script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )

@@ -1,0 +1,9 @@
+h1 List of all cars
+
+ul
+  for car in cars
+    li
+      | #{car.model_year} #{car.make} #{car.model}
+      a(href="cars/#{car._id}") Show
+
+a(href="/cars/new") Make a new car
