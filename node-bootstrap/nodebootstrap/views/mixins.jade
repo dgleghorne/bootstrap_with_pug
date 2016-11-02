@@ -1,5 +1,5 @@
 //- Navbar mixins
-mixin nav(name, id, style)
+mixin nav(name, id, style, href)
     - var style = (typeof style === 'undefined') ? "default" : style
     nav( role="navigation", class=["navbar", "navbar-" + style] )
         .navbar-header
@@ -8,7 +8,7 @@ mixin nav(name, id, style)
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a.navbar-brand(href="#")= name
+            a.navbar-brand(href=href)= name
 
         .collapse.navbar-collapse( id=id )
             ul.nav.navbar-nav
@@ -31,6 +31,32 @@ mixin nav_divider
 mixin nav_header
     li.dropdown-header
         block
+
+mixin nav_tabs(option)
+    if option == 'justified'
+      ul.nav.nav-tabs.nav-justified
+        block
+    else
+      ul.nav.nav-tabs
+        block
+
+mixin nav_pills(option)
+    if option == 'stacked'
+      ul.nav.nav-pills.nav-stacked
+        block
+    else if option == 'justified'
+      ul.nav.nav-pills.nav-justified
+        block
+    else
+      ul.nav.nav-pills
+        block
+
+mixin nav_form(type, placeholder, style)
+  form.navbar-form.navbar-left
+    .form-group
+      input.form-control(type=type, placeholder=placeholder)
+    button(class="btn btn-#{style}" type='submit') Submit
+
 
 //- End navbar mixins
 
@@ -157,6 +183,18 @@ mixin input_grp_radio (type)
     span.input-group-addon
       input(type='radio')
     input.form-control(type=type)
+
+mixin input_grp_btn_left(type, placeholder, style)
+  .input-group
+    span.input-group-btn
+      button(class="btn btn-#{style}" type='button') Go!
+    input.form-control(type=type, placeholder=placeholder)
+
+mixin input_grp_btn_right(type, placeholder, style)
+  .input-group
+    input.form-control(type=type, placeholder=placeholder)
+    span.input-group-btn
+      button(class="btn btn-#{style}" type='button') Go!
 
 
 //bootswatch mixin

@@ -1,0 +1,109 @@
+include mixins
+doctype
+html( lang="en" )
+    head
+        title Baking Bootstrap Snippets with Jade
+        meta( charset='utf-8' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+        meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+        //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+        +bootswatch('superhero')
+
+    body(style="padding-bottom:10rem;")
+      .container
+        +nav('LOGO', 'navbar', 'default', '/')
+          ul.nav.navbar-nav.navbar-right
+            +nav_item( "about.html" ) About
+            +nav_item( "contact.html") Contact
+            +nav_item( "contact.html")
+              span.glyphicon.glyphicon-phone(aria-hidden='true')
+        h1 Super Awesome Product
+          small It's glorious
+        hr
+        .row.col-md-8
+          h2 Let me tell you some more here...
+          small See why I was right!!
+        .row.col-md-4
+          +button('success', 'somewhere') Do something
+          +button('info', 'somewhere') Learn some more
+      .container
+        #myCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+            li(data-target='#myCarousel', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            .item.active
+              img(src='flower.jpg' width='100%' height ='100%')
+              .carousel-caption
+                h3 Chania
+                p The atmosphere in Chania has a touch of Florence and Venice.
+            .item
+              img(src='franklin_trees_01.jpg' width='100%' height ='100%')
+              .carousel-caption
+                h3 Lots of trees
+                p Trees are nice, as is this path.
+            .item
+              img(src='Hopetoun_falls.jpg' width='100%' height ='100%')
+              .carousel-caption
+                h3 Hopetoun Falls
+                p Nice waterfall, fun for all!
+            .item
+              img(src='nature13.jpg' width='100%' height ='100%')
+              .carousel-caption
+                h3 Lake and mountain
+                p Looks lovely
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+        .container
+          .row.col-md-6
+            h2 Common Questions
+            p.
+              Sur bon bonne age comme laque large. Toi fronts par nul maison valoir. Bataille je cornette le bravoure oh souliers. La fanatiques asiatiques partageait legerement te. Dur bon direction illumines toutefois courroies ont existence suspendue. Je cris fond ames tout avez tard un. Eperon non pic moi tuiles tirant. Paumes femmes trente ans propos patrie est tuiles eut. Guere pu ainsi trois actes vaste je il treve.
+              Jet sortaient ils flamboyer dissipait ras echauffer signalant cuirasses. Bonjour accable ah ecarter grandes sa. Abattre couvert pinacle drapees as il. Oh faisait devenir phrases surprit en qu. Defilaient art vie approchait gouverneur tricolores dut. Prisonnier chantaient subitement eau clairieres ils les. Boulevards oh nationales entrainait tristement clairieres au et approchait.
+          .row.col-md-6
+            h2 Quote of the Day!
+            p Many, many games of ping-pong has not helped my game!!
+            small David G
+        .container
+          .container.marketing(class='text-center')
+            // Three columns of text below the carousel
+            .row
+              .col-lg-4
+                img.img-circle(src='wKVRdfBx.png', alt='Generic placeholder image', width='140', height='140')
+                h2 Heading
+                p
+                  | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+                p
+                  a.btn.btn-default(href='#', role='button') View details »
+
+              .col-lg-4
+                img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+                h2 Heading
+                p
+                  | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                p
+                  a.btn.btn-default(href='#', role='button') View details »
+
+              .col-lg-4
+                img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+                h2 Heading
+                p
+                  | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                p
+                  a.btn.btn-default(href='#', role='button') View details »
+
+
+
+
+script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )

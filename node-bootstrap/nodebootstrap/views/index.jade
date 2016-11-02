@@ -13,7 +13,7 @@ html( lang="en" )
     body(style="padding-bottom:10rem;")
       .container
         +nav("David Corp", "dropdown_menu")
-          +nav_item( "index.html", "active" ) Home
+          +nav_item( "mockup1", "active" ) Mockup1
           +nav_item( "about.html" ) About
           +nav_item( "contact.html", "disabled" ) Contact
           +nav_item_dropdown('#')(label="Dropdown")
@@ -24,6 +24,8 @@ html( lang="en" )
             +nav_header Nav header
             +nav_item( "#" ) Separated link
             +nav_item( "#" ) One more separated link
+          +nav_form(text, 'Search', 'default')
+
         .jumbotron
           h1 Hello, world!
           p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
@@ -145,6 +147,40 @@ html( lang="en" )
         +input_grp_checkbox('text')
         br
         +input_grp_radio('text')
+        br
+        +input_grp_btn_left('text', 'Search for...', 'default')
+        br
+        +input_grp_btn_right('text', 'Search for...', 'default')
+        br
+        br
+        +nav_tabs
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
+        br
+        br
+        +nav_tabs('justified')
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
+        br
+        br
+        +nav_pills
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
+        br
+        br
+        +nav_pills('stacked')
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
+        br
+        br
+        +nav_pills('justified')
+          +nav_item( "index.html", "active" ) Home
+          +nav_item( "about.html" ) About
+          +nav_item( "contact.html", "disabled" ) Contact
 
 
 script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
